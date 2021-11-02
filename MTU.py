@@ -8,6 +8,6 @@ class MTU:
         if(entrada[0:3] != "000"):
             print("Inicio Incorreto")
 
-        entradaTratada = entrada.split("000") #criterio de parada, verifica 000
+        entradaTratada = entrada.split("000") # verifica 000
         if len(entradaTratada) != 4:
             print("Erro nos separadores [000]")

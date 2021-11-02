@@ -23,6 +23,7 @@ def main():
     parser.add_argument('-d', '--dir', type=str, nargs=1)
     args = parser.parse_args()
 
+    #caminho fornecido
     if args.dir:
         arquivos = [arquivo for arquivo in os.listdir(args.dir[0])
                     if arquivo.endswith(".txt")]
@@ -32,6 +33,7 @@ def main():
             mTuring = leitura(arquivo_path)
             print("chegou aqui, caminho: ", mTuring)
             #TODO Simulação em si. Busca de caminho funcional!
+    #caminho padrao
     elif args.arquivo:
         mt = leitura(args.arquivo)
         print("args.arquivo = ", args.arquivo)

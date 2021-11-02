@@ -9,7 +9,7 @@ class Fita:
         self.reiniciaFita(entrada)
 
     # zerar fita e reiniciar entrada
-    def reiniciarFota(self,entrada):
+    def reiniciarFita(self,entrada):
         self.fita = BLANK + entrada
         self.cabeca = 0
 
