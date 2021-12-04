@@ -7,13 +7,19 @@ import os
 import os.path
 import argparse
 
+from Heuristicas import MTU_Heuristicas
+
 
 def leitura(arquivo):
     with open(arquivo) as arquivo:
         maquinaTuring = arquivo.read().replace('\n', '') # remove quebras de linha
-        print('Testando para o arquivo: ' .format(arquivo.name))
+        print('Testando para o arquivo: {} '.format(arquivo.name))
         return maquinaTuring # retorna arquivo tratado
 
+def simular(mt):
+    uh = MTU_Heuristicas(mt)
+    resultado = uh.resultado()
+    print(resultado)
 
 def main():
     # Constroi string de argumento de execução
@@ -29,15 +35,12 @@ def main():
                     if arquivo.endswith(".txt")]
         for arquivo in arquivos:
             arquivo_path = os.path.join(args[0], arquivo)
-            print("arquivo_path = ", arquivo_path)
             mTuring = leitura(arquivo_path)
-            print("chegou aqui, caminho: ", mTuring)
-            #TODO Simulação em si. Busca de caminho funcional!
+            simular(mTuring)
     #caminho padrao
     elif args.arquivo:
-        mt = leitura(args.arquivo)
-        print("args.arquivo = ", args.arquivo)
-        #TODO Simulação em si. Busca de caminho funcional!
+        mTuring = leitura(args.arquivo)
+        simular(mTuring) 
 
 if __name__ == '__main__':
     main()
