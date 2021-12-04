@@ -16,4 +16,5 @@ python main.py caminho_arquivo/nome_arquivo.txt
 Equipe: 
 
 Joao Plínio Siqueira
+#
 Tales Ribeiro Magalhães
